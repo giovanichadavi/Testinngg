@@ -28,6 +28,29 @@
         html { scroll-behavior: smooth; overflow-x: hidden; }
         body { overflow-x: hidden; transition: background-color 0.3s ease; }
         
+        /* Navbar Floating & Oval Transition */
+        nav {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        nav.scrolled {
+            top: 15px;
+            width: 90%;
+            left: 5%;
+            border-radius: 9999px; /* Membuat bentuk Oval */
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav.scrolled {
+                width: 95%;
+                left: 2.5%;
+            }
+        }
+
         /* Animasi Background Hero */
         .hero-container {
             position: relative;
@@ -95,7 +118,7 @@
         }
 
         #mobile-menu { display: none; }
-        #mobile-menu.active { display: block; }
+        #mobile-menu.active { display: block; border-radius: 2rem; margin-top: 1rem; }
 
         .img-box { overflow: hidden; border-radius: 2rem; }
         .img-box img { transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -108,8 +131,8 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-100">
 
-    <nav class="bg-white/95 dark:bg-gray-800/95 backdrop-blur-md shadow-sm sticky top-0 z-[100] transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav id="main-nav" class="bg-white/95 dark:bg-gray-800/95 backdrop-blur-md shadow-sm fixed top-0 z-[100] transition-colors">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-4">
                     <img src="logo.jpeg" alt="Logo" class="h-10 md:h-12 object-contain rounded">
@@ -125,7 +148,7 @@
                     <a href="#kontak" class="text-gray-600 dark:text-gray-300 hover:text-ptpn-green transition uppercase">Kontak</a>
                     
                     <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-lg" title="Ganti Mode">
-                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
                         <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
                     </button>
 
@@ -137,7 +160,7 @@
             </div>
         </div>
         
-        <div id="mobile-menu" class="md:hidden bg-white dark:bg-gray-800 border-t dark:border-gray-700 p-6 shadow-xl absolute w-full z-50">
+        <div id="mobile-menu" class="md:hidden bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border dark:border-gray-700 p-6 shadow-xl absolute w-full z-50">
             <a href="#home" class="block font-black text-gray-700 dark:text-gray-200 py-2">HOME</a>
             <a href="#news" class="block font-black text-gray-700 dark:text-gray-200 py-2">NEWS</a>
             <a href="#produk" class="block font-black text-gray-700 dark:text-gray-200 py-2">PRODUK</a>
@@ -153,20 +176,21 @@
         </div>
     </nav>
 
-    <section id="home" class="hero-container px-4 text-center">
-        <div class="hero-bg-animated"></div>
-        <div data-aos="fade-up" data-aos-duration="1500" class="flex flex-col items-center w-full text-white">
-            <h1 class="reveal-text font-hero-responsive font-black tracking-tighter uppercase drop-shadow-2xl hover-text-move cursor-default">
-                PT PERKEBUNAN NUSANTARA IV
-            </h1>
-            <h1 class="reveal-text font-hero-responsive font-black mb-4 tracking-tighter uppercase drop-shadow-2xl hover-text-move cursor-default" style="animation-delay: 0.5s;">
-                REGIONAL 5
-            </h1>
-            <p class="text-xl md:text-3xl text-green-300 font-black italic drop-shadow-lg" data-aos="fade-up" data-aos-delay="1200">
-                Tumbuh, Juara, Bangun Negeri
-            </p>
-        </div>
-    </section>
+    <div class="pt-20"> <section id="home" class="hero-container px-4 text-center">
+            <div class="hero-bg-animated"></div>
+            <div data-aos="fade-up" data-aos-duration="1500" class="flex flex-col items-center w-full text-white">
+                <h1 class="reveal-text font-hero-responsive font-black tracking-tighter uppercase drop-shadow-2xl hover-text-move cursor-default">
+                    PT PERKEBUNAN NUSANTARA IV
+                </h1>
+                <h1 class="reveal-text font-hero-responsive font-black mb-4 tracking-tighter uppercase drop-shadow-2xl hover-text-move cursor-default" style="animation-delay: 0.5s;">
+                    REGIONAL 5
+                </h1>
+                <p class="text-xl md:text-3xl text-green-300 font-black italic drop-shadow-lg" data-aos="fade-up" data-aos-delay="1200">
+                    Tumbuh, Juara, Bangun Negeri
+                </p>
+            </div>
+        </section>
+    </div>
 
     <section id="news" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-20" data-aos="fade-up">
@@ -228,7 +252,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="bg-ptpn-dark p-10 md:p-12 rounded-[3rem] shadow-xl flex flex-col space-y-8" data-aos="fade-right">
                     <h3 class="text-3xl font-black uppercase border-b-4 border-ptpn-green pb-4">Info Kami</h3>
-                    <div class="space-y-6 font-bold text-lg">
+                    <div class="space-y-6 font-bold text-lg text-white">
                         <p class="flex items-start gap-4"><i class="fas fa-map-marker-alt text-green-400 mt-1"></i> Jl. Slt. Abdurrahman No.11, Pontianak</p>
                         <p class="flex items-center gap-4"><i class="fas fa-phone-alt text-green-400"></i> (0561) 749367</p>
                         <p class="flex items-center gap-4"><i class="fas fa-envelope text-green-400"></i> ptpn4@ptpn4.co.id</p>
@@ -299,6 +323,16 @@
     <script>
         AOS.init({ duration: 1000, once: true });
         
+        // Navbar on Scroll Logic
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
         // Mobile menu logic
         const btn = document.getElementById('hamburger');
         const menu = document.getElementById('mobile-menu');
@@ -317,7 +351,6 @@
         toggleBtn.addEventListener('click', toggleDarkMode);
         toggleBtnMobile.addEventListener('click', toggleDarkMode);
 
-        // Check preference on load
         if (localStorage.getItem('theme') === 'dark' || 
             (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
