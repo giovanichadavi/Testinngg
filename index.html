@@ -51,20 +51,19 @@
         .reveal-text {
             display: inline-block;
             overflow: hidden;
-            white-space: nowrap; /* Desktop tetap satu baris saat animasi */
+            white-space: nowrap;
             border-right: 3px solid transparent;
             animation: typing 2.5s steps(40, end), blink .75s step-end infinite;
         }
 
-        /* Fix agar tidak terpotong di Smartphone */
         @media (max-width: 768px) {
             .reveal-text {
-                white-space: normal; /* Teks turun ke bawah di HP */
-                animation: fadeInText 2s ease-out forwards; /* Ganti ke animasi muncul biasa agar rapi */
+                white-space: normal;
+                animation: fadeInText 2s ease-out forwards;
                 border-right: none;
             }
             .font-hero-responsive {
-                font-size: 1.75rem; /* Ukuran font di HP */
+                font-size: 1.75rem;
                 line-height: 1.2;
             }
         }
@@ -81,7 +80,7 @@
 
         @media (min-width: 768px) {
             .font-hero-responsive {
-                font-size: 4.5rem; /* Desktop size */
+                font-size: 4.5rem;
             }
         }
 
@@ -149,7 +148,7 @@
     </section>
 
     <section id="news" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-20" data-aos="fade-down">
+        <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="text-4xl font-black uppercase inline-block border-b-8 border-ptpn-green pb-2">Berita Terbaru</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -185,23 +184,20 @@
 
     <section id="produk" class="py-24 bg-ptpn-light px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-20 uppercase text-ptpn-dark" data-aos="zoom-in">Komoditas Unggulan</h2>
+            <h2 class="text-4xl font-black text-center mb-20 uppercase text-ptpn-dark" data-aos="zoom-in-up" data-aos-duration="1000">Komoditas Unggulan</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                 <div class="group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="img-box h-72 mb-6 border-8 border-white shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    <div class="img-box h-72 mb-6 shadow-2xl border-none"> <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                     </div>
                     <h4 class="text-2xl font-black text-ptpn-dark uppercase tracking-tighter">Kelapa Sawit</h4>
                 </div>
                 <div class="group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="img-box h-72 mb-6 border-8 border-white shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    <div class="img-box h-72 mb-6 shadow-2xl border-none"> <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                     </div>
                     <h4 class="text-2xl font-black text-ptpn-dark uppercase tracking-tighter">Margarin</h4>
                 </div>
                 <div class="group" data-aos="fade-up" data-aos-delay="500">
-                    <div class="img-box h-72 mb-6 border-8 border-white shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1532635241-17e820acc59f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                    <div class="img-box h-72 mb-6 shadow-2xl border-none"> <img src="https://images.unsplash.com/photo-1532635241-17e820acc59f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                     </div>
                     <h4 class="text-2xl font-black text-ptpn-dark uppercase tracking-tighter">Bio Diesel</h4>
                 </div>
@@ -210,20 +206,20 @@
     </section>
 
     <section id="kontak" class="py-24 px-6 bg-white">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 bg-ptpn-dark rounded-[3rem] p-8 md:p-12 text-white" data-aos="flip-up">
-            <div class="space-y-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 bg-ptpn-dark rounded-[3rem] p-10 md:p-16 text-white" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="space-y-8">
                 <h2 class="text-4xl font-black uppercase">Hubungi Kami</h2>
-                <div class="space-y-4 font-bold text-lg">
+                <div class="space-y-6 font-bold text-lg">
                     <p><i class="fas fa-map-marker-alt text-green-400 mr-4"></i> Jl. Slt. Abdurrahman No.11, Pontianak</p>
                     <p><i class="fas fa-phone-alt text-green-400 mr-4"></i> (0561) 749367</p>
                     <p><i class="fas fa-envelope text-green-400 mr-4"></i> ptpn4@ptpn4.co.id</p>
                 </div>
             </div>
             <form class="space-y-4">
-                <input type="text" placeholder="Nama" class="w-full p-4 bg-white/10 border border-white/20 rounded-[2rem] outline-none font-bold placeholder-white/50 focus:bg-white/20 transition">
-                <input type="email" placeholder="Email Anda" class="w-full p-4 bg-white/10 border border-white/20 rounded-[2rem] outline-none font-bold placeholder-white/50 focus:bg-white/20 transition">
-                <textarea placeholder="Pesan" class="w-full p-4 bg-white/10 border border-white/20 rounded-[2rem] h-32 outline-none font-bold placeholder-white/50 focus:bg-white/20 transition"></textarea>
-                <button class="bg-ptpn-green w-full py-4 rounded-[2rem] font-black uppercase shadow-2xl hover:bg-white hover:text-ptpn-green transition-all">Kirim Pesan</button>
+                <input type="text" placeholder="Nama" class="w-full p-5 bg-white/10 border border-white/20 rounded-[2rem] outline-none font-bold placeholder-white/50 focus:bg-white/20 transition text-base">
+                <input type="email" placeholder="Email Anda" class="w-full p-5 bg-white/10 border border-white/20 rounded-[2rem] outline-none font-bold placeholder-white/50 focus:bg-white/20 transition text-base">
+                <textarea placeholder="Pesan" class="w-full p-5 bg-white/10 border border-white/20 rounded-[2rem] h-32 outline-none font-bold placeholder-white/50 focus:bg-white/20 transition text-base"></textarea>
+                <button class="bg-ptpn-green w-full py-4 rounded-[2rem] font-black uppercase shadow-2xl hover:bg-white hover:text-ptpn-green transition-all text-base">Kirim Pesan</button>
             </form>
         </div>
     </section>
