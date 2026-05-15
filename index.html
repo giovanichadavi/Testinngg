@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PTPN IV Regional 5 - Tumbuh, Juara, Bangun Negeri</title>
+    <title>PTPN IV Regional 5 - Modern & Profesional</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
@@ -21,96 +20,105 @@
         }
     </script>
     <style>
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { overflow-x: hidden; }
         .hero-bg {
             background-image: url('header.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        /* Card transparansi tinggi agar foto header.jpg terlihat jelas */
+        /* Glassmorphism Card - Sangat Transparan */
         .glass-card {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(2px);
-            -webkit-backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
+        /* Mobile Menu */
         #mobile-menu { display: none; }
-        #mobile-menu.active { display: block; }
+        #mobile-menu.active { display: block; animation: slideDown 0.3s ease-out; }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-[100]">
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-[100] border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-4">
                     <img src="logo.jpeg" alt="Logo PTPN IV" class="h-10 md:h-12 w-auto object-contain">
-                    <div class="flex flex-col">
-                        <span class="font-black text-ptpn-green text-lg leading-none">PTPN IV</span>
-                        <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Regional 5</span>
+                    <div class="hidden sm:flex flex-col border-l border-gray-200 pl-4">
+                        <span class="font-black text-ptpn-green text-xl leading-none tracking-tighter">PTPN IV</span>
+                        <span class="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">Regional 5</span>
                     </div>
                 </div>
 
-                <div class="hidden md:flex space-x-6 items-center">
-                    <a href="#home" class="text-gray-700 hover:text-ptpn-green font-bold transition">Home</a>
-                    <a href="#tentang" class="text-gray-700 hover:text-ptpn-green font-bold transition">Tentang</a>
-                    <a href="#galeri" class="text-gray-700 hover:text-ptpn-green font-bold transition">Galeri</a>
-                    <a href="#produk" class="text-gray-700 hover:text-ptpn-green font-bold transition">Produk</a>
-                    <a href="#kontak" class="text-gray-700 hover:text-ptpn-green font-bold transition">Kontak</a>
-                    <button class="bg-ptpn-green text-white px-6 py-2 rounded-lg hover:bg-ptpn-dark transition font-bold shadow-md ml-4">Login</button>
+                <div class="hidden md:flex space-x-10 items-center">
+                    <a href="#home" class="text-sm font-bold text-gray-600 hover:text-ptpn-green transition-all uppercase tracking-widest">Home</a>
+                    <a href="#tentang" class="text-sm font-bold text-gray-600 hover:text-ptpn-green transition-all uppercase tracking-widest">Tentang</a>
+                    <a href="#galeri" class="text-sm font-bold text-gray-600 hover:text-ptpn-green transition-all uppercase tracking-widest">Galeri</a>
+                    <a href="#produk" class="text-sm font-bold text-gray-600 hover:text-ptpn-green transition-all uppercase tracking-widest">Produk</a>
+                    <a href="#kontak" class="text-sm font-bold text-gray-600 hover:text-ptpn-green transition-all uppercase tracking-widest">Kontak</a>
                 </div>
 
-                <div class="md:hidden flex items-center gap-4">
-                    <button class="bg-ptpn-green text-white px-4 py-1.5 rounded-lg text-sm font-bold">Login</button>
-                    <button id="hamburger" class="text-gray-700 focus:outline-none">
+                <div class="hidden md:block">
+                    <button class="bg-ptpn-green text-white px-8 py-2.5 rounded-full hover:bg-ptpn-dark transition-all font-black text-xs uppercase tracking-widest shadow-lg shadow-ptpn-green/20">
+                        Portal Login
+                    </button>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="hamburger" class="text-ptpn-dark p-2 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="#home" class="block px-4 py-3 text-gray-700 font-bold hover:bg-ptpn-light hover:text-ptpn-green rounded-xl">Home</a>
-                <a href="#tentang" class="block px-4 py-3 text-gray-700 font-bold hover:bg-ptpn-light hover:text-ptpn-green rounded-xl">Tentang Kami</a>
-                <a href="#galeri" class="block px-4 py-3 text-gray-700 font-bold hover:bg-ptpn-light hover:text-ptpn-green rounded-xl">Galeri</a>
-                <a href="#produk" class="block px-4 py-3 text-gray-700 font-bold hover:bg-ptpn-light hover:text-ptpn-green rounded-xl">Produk</a>
-                <a href="#kontak" class="block px-4 py-3 text-gray-700 font-bold hover:bg-ptpn-light hover:text-ptpn-green rounded-xl">Kontak</a>
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0">
+            <div class="px-6 py-8 space-y-4">
+                <a href="#home" class="block text-lg font-black text-gray-800 hover:text-ptpn-green">Home</a>
+                <a href="#tentang" class="block text-lg font-black text-gray-800 hover:text-ptpn-green">Tentang</a>
+                <a href="#galeri" class="block text-lg font-black text-gray-800 hover:text-ptpn-green">Galeri</a>
+                <a href="#produk" class="block text-lg font-black text-gray-800 hover:text-ptpn-green">Produk</a>
+                <a href="#kontak" class="block text-lg font-black text-gray-800 hover:text-ptpn-green">Kontak</a>
+                <hr class="border-gray-100">
+                <button class="w-full bg-ptpn-green text-white py-4 rounded-xl font-black uppercase">Portal Login</button>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero-bg h-[75vh] flex items-center justify-center text-center px-4">
-        <div class="glass-card p-8 md:p-12 rounded-[40px] shadow-lg max-w-4xl border border-white/40">
-            <h1 class="text-3xl md:text-5xl font-black text-ptpn-dark mb-3 tracking-tight uppercase leading-tight">
+    <section id="home" class="hero-bg h-[70vh] flex items-center justify-center text-center px-4">
+        <div class="glass-card p-8 md:p-16 rounded-[40px] max-w-4xl mx-auto">
+            <h1 class="text-3xl md:text-6xl font-black text-ptpn-dark mb-4 tracking-tighter uppercase leading-tight">
                 PT Perkebunan Nusantara IV
             </h1>
-            <p class="text-lg md:text-xl text-ptpn-green font-extrabold italic mb-8 tracking-wide">
+            <p class="text-lg md:text-2xl text-ptpn-green font-extrabold italic mb-10">
                 Tumbuh, Juara, Bangun Negeri
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#produk" class="bg-ptpn-green text-white px-8 py-3 rounded-xl font-black text-sm hover:bg-ptpn-dark transition shadow-lg uppercase">Produk Utama</a>
-                <a href="#kontak" class="bg-white/80 text-ptpn-green border-2 border-ptpn-green px-8 py-3 rounded-xl font-black text-sm hover:bg-white transition uppercase">Hubungi Kami</a>
+                <a href="#produk" class="bg-ptpn-green text-white px-10 py-4 rounded-full font-black text-sm hover:bg-ptpn-dark transition shadow-xl uppercase">Eksplorasi Produk</a>
+                <a href="#kontak" class="bg-white/80 text-ptpn-green border-2 border-ptpn-green px-10 py-4 rounded-full font-black text-sm hover:bg-white transition uppercase">Hubungi Kami</a>
             </div>
         </div>
     </section>
 
-    <section id="tentang" class="py-24 max-w-7xl mx-auto px-4">
+    <section id="tentang" class="py-24 px-4 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="relative">
-                <img src="https://images.unsplash.com/photo-1591543620767-582b2e76369e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                     alt="Perkebunan Sawit" 
-                     class="rounded-[30px] shadow-2xl border-4 border-white object-cover h-[450px] w-full">
-            </div>
+            <img src="https://images.unsplash.com/photo-1591543620767-582b2e76369e?auto=format&fit=crop&w=800&q=80" 
+                 alt="Kebun Sawit" class="rounded-[40px] shadow-2xl h-[500px] w-full object-cover">
             <div class="space-y-8">
-                <h2 class="text-4xl font-black text-gray-900 border-l-8 border-ptpn-green pl-4 uppercase">Tentang Kami</h2>
-                <p class="text-gray-600 leading-relaxed text-xl font-medium italic text-justify">
-                    PT Perkebunan Nusantara III (Persero) merupakan BUMN Holding Perkebunan yang mengelola komoditi perkebunan nasional secara profesional dan berkelanjutan untuk kemajuan bangsa.
+                <h2 class="text-4xl font-black text-gray-900 border-l-8 border-ptpn-green pl-6 uppercase">Tentang Kami</h2>
+                <p class="text-gray-600 leading-relaxed text-xl font-medium italic">
+                    PT Perkebunan Nusantara IV Regional 5 berkomitmen mengelola sumber daya alam secara berkelanjutan demi kemakmuran negeri dan kualitas produk dunia.
                 </p>
-                <div class="bg-ptpn-light p-8 rounded-3xl border border-green-100 shadow-sm">
-                    <h3 class="text-xl font-black text-ptpn-dark mb-2">VISI</h3>
-                    <p class="text-ptpn-dark font-bold text-lg leading-relaxed">"Menjadi perusahaan agribisnis nasional yang unggul dan berdaya saing kelas dunia."</p>
+                <div class="bg-ptpn-light p-8 rounded-[30px] border border-green-100">
+                    <h3 class="text-lg font-black text-ptpn-dark mb-2">VISI UTAMA</h3>
+                    <p class="text-gray-700 font-bold italic">"Menjadi perusahaan agribisnis nasional yang unggul dan berdaya saing kelas dunia."</p>
                 </div>
             </div>
         </div>
@@ -118,16 +126,20 @@
 
     <section id="galeri" class="py-24 bg-white px-4">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-black mb-12 uppercase">Galeri Operasional</h2>
+            <h2 class="text-4xl font-black mb-4 uppercase">Galeri Operasional</h2>
+            <p class="text-gray-500 font-bold mb-16 italic uppercase tracking-widest">Aktivitas Perkebunan, Pabrik, & Pekerja</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="h-80 rounded-3xl overflow-hidden shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                <div class="group h-96 rounded-[40px] overflow-hidden shadow-2xl relative">
+                    <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white text-left font-black text-xl">Kelapa Sawit</div>
                 </div>
-                <div class="h-80 rounded-3xl overflow-hidden shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1621932953986-15fcf084da0f?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                <div class="group h-96 rounded-[40px] overflow-hidden shadow-2xl relative">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white text-left font-black text-xl">Pabrik Pengolahan</div>
                 </div>
-                <div class="h-80 rounded-3xl overflow-hidden shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1501004318641-729e84f206e2?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                <div class="group h-96 rounded-[40px] overflow-hidden shadow-2xl relative">
+                    <img src="https://images.unsplash.com/photo-1621932953986-15fcf084da0f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white text-left font-black text-xl">Tenaga Ahli & Pekerja</div>
                 </div>
             </div>
         </div>
@@ -135,21 +147,27 @@
 
     <section id="produk" class="py-24 max-w-7xl mx-auto px-4">
         <h2 class="text-4xl font-black text-center mb-16 uppercase text-ptpn-dark">Produk Unggulan</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-            <div class="bg-white p-10 rounded-[40px] shadow-lg border border-gray-100 hover:shadow-2xl transition group">
-                <i class="fas fa-leaf text-ptpn-green text-6xl mb-6"></i>
-                <h4 class="font-black text-2xl mb-3">Kelapa Sawit</h4>
-                <p class="text-gray-500 font-bold">CPO dan PKO berkualitas ekspor untuk industri global.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center group">
+                <div class="h-64 rounded-[40px] overflow-hidden mb-6 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1474979266404-7eaacabc88c5?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
+                </div>
+                <h4 class="text-2xl font-black text-ptpn-dark mb-2 uppercase">Minyak Kelapa Sawit</h4>
+                <p class="text-gray-500 font-bold italic">Minyak makan berkualitas premium.</p>
             </div>
-            <div class="bg-white p-10 rounded-[40px] shadow-lg border border-gray-100 hover:shadow-2xl transition group">
-                <i class="fas fa-flask text-ptpn-green text-6xl mb-6"></i>
-                <h4 class="font-black text-2xl mb-3">Inovasi Hilir</h4>
-                <p class="text-gray-500 font-bold">Riset berkelanjutan untuk hilirisasi produk perkebunan.</p>
+            <div class="text-center group">
+                <div class="h-64 rounded-[40px] overflow-hidden mb-6 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
+                </div>
+                <h4 class="text-2xl font-black text-ptpn-dark mb-2 uppercase">Margarin</h4>
+                <p class="text-gray-500 font-bold italic">Bahan baku pangan terbaik negeri.</p>
             </div>
-            <div class="bg-white p-10 rounded-[40px] shadow-lg border border-gray-100 hover:shadow-2xl transition group">
-                <i class="fas fa-seedling text-ptpn-green text-6xl mb-6"></i>
-                <h4 class="font-black text-2xl mb-3">Bibit Unggul</h4>
-                <p class="text-gray-500 font-bold">Penyediaan bibit varietas terbaik untuk hasil maksimal.</p>
+            <div class="text-center group">
+                <div class="h-64 rounded-[40px] overflow-hidden mb-6 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1590231575450-48e02d645e5a?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
+                </div>
+                <h4 class="text-2xl font-black text-ptpn-dark mb-2 uppercase">Bio Diesel</h4>
+                <p class="text-gray-500 font-bold italic">Energi terbarukan ramah lingkungan.</p>
             </div>
         </div>
     </section>
@@ -167,7 +185,7 @@
                 </form>
             </div>
             <div class="bg-ptpn-dark text-white p-12 rounded-[50px] shadow-2xl space-y-10">
-                <h3 class="text-3xl font-black mb-8 border-b-4 border-ptpn-green pb-4">INFORMASI KAMI</h3>
+                <h3 class="text-3xl font-black mb-8 border-b-4 border-ptpn-green pb-4 uppercase">INFORMASI KAMI</h3>
                 <div class="flex items-start gap-6">
                     <div class="bg-ptpn-green p-4 rounded-2xl"><i class="fas fa-map-marker-alt text-2xl"></i></div>
                     <div>
@@ -231,12 +249,13 @@
                 </div>
             </div>
         </div>
-        <div class="text-center mt-20 pt-10 border-t border-gray-800 text-gray-500 font-bold tracking-widest uppercase">
-            © 2026 PT PERKEBUNAN NUSANTARA. ALL RIGHTS RESERVED.
+        <div class="text-center mt-20 pt-10 border-t border-gray-800 text-gray-500 font-bold tracking-widest uppercase text-xs">
+            © 2026 PT PERKEBUNAN NUSANTARA IV. ALL RIGHTS RESERVED.
         </div>
     </footer>
 
     <script>
+        // Hamburger Menu Logic
         const btn = document.getElementById('hamburger');
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => { menu.classList.toggle('active'); });
@@ -244,5 +263,6 @@
             link.addEventListener('click', () => { menu.classList.remove('active'); });
         });
     </script>
+
 </body>
 </html>
