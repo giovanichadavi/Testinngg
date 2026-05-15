@@ -1,157 +1,203 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giovani Chadavi | Portfolio</title>
+    <title>PTPN IV Regional 5 - Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <script>
-        // Konfigurasi Tailwind agar mendukung class-based dark mode
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { transition: background-color 0.4s, color 0.4s; }
-        .nav-glass { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .hero-bg {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1594498653385-d5172c532c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
-<body class="bg-white text-slate-900 dark:bg-[#0f172a] dark:text-slate-100 antialiased">
+<body class="bg-gray-50 font-sans">
 
-    <!-- Navbar -->
-    <nav class="fixed w-full top-0 z-50 border-b border-slate-100 dark:border-slate-800 nav-glass bg-white/70 dark:bg-[#0f172a]/70">
-        <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
-            <span class="text-lg font-extrabold tracking-tighter text-blue-600">GC.</span>
-            
-            <div class="flex items-center space-x-6">
-                <a href="#projects" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
-                
-                <!-- Dark Mode Toggle Button -->
-                <button id="theme-toggle" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:scale-110 transition-all">
-                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
-                </button>
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <img src="https://via.placeholder.com/40x40?text=Logo" alt="Logo" class="h-8">
+                    <span class="font-bold text-green-800 text-lg">PTPN IV Regional 5</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-green-700">Home</a>
+                    <a href="#tentang" class="text-gray-600 hover:text-green-700">Tentang</a>
+                    <a href="#galeri" class="text-gray-600 hover:text-green-700">Galeri</a>
+                    <a href="#produk" class="text-gray-600 hover:text-green-700">Produk</a>
+                    <a href="#kontak" class="text-gray-600 hover:text-green-700">Kontak</a>
+                    <button class="bg-gray-100 px-4 py-2 rounded-lg border hover:bg-gray-200 transition">Log In</button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Compact Hero Section -->
-    <header class="pt-32 pb-16 px-6">
-        <div class="max-w-3xl mx-auto text-center">
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold mb-6 border border-blue-100 dark:border-blue-800">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                <span>PENGEMBANG SISTEM & KEAMANAN</span>
-            </div>
-            
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
-                Giovani Chadavi
-            </h1>
-            
-            <div class="text-xl md:text-2xl font-semibold text-slate-600 dark:text-slate-400 mb-6 h-8">
-                <span id="typed"></span>
-            </div>
-
-            <p class="text-slate-500 dark:text-slate-400 leading-relaxed max-w-xl mx-auto mb-8 text-sm md:text-base">
-                Spesialis Backend Laravel dengan keahlian dalam manajemen risiko data dan audit keamanan infrastruktur server.
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold shadow-lg shadow-blue-600/20 transition-all">
-                    Lihat Projek
-                </a>
-                <a href="mailto:giovani@example.com" class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 px-6 py-2.5 rounded-xl font-bold transition-all">
-                    Hubungi Saya
-                </a>
-            </div>
+    <section id="home" class="hero-bg h-[500px] flex flex-col items-center justify-center text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-300 mb-2 tracking-widest uppercase">PT Perkebunan Nusantara IV</h1>
+        <p class="text-gray-500 text-lg mb-8 italic">Tumbuh, Juara, Bangun Negeri</p>
+        <div class="flex gap-4">
+            <a href="#produk" class="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition">Produk kami</a>
+            <a href="#kontak" class="bg-blue-200 text-blue-800 px-6 py-3 rounded-md hover:bg-blue-300 transition">Kontak kami</a>
         </div>
-    </header>
+    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 px-6 bg-slate-50/50 dark:bg-[#0b1222]">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-2xl font-bold mb-10 flex items-center">
-                <span class="w-8 h-[2px] bg-blue-600 mr-4"></span>
-                Projek Unggulan
-            </h2>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Project 1 -->
-                <div class="group bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm hover:border-blue-400 transition-all">
-                    <div class="w-10 h-10 bg-blue-50 dark:bg-blue-900/40 rounded-lg flex items-center justify-center text-blue-600 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+    <section id="tentang" class="py-16 max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 relative inline-block left-1/2 -translate-x-1/2">
+            Tentang
+            <span class="block h-1 bg-green-600 w-1/2 mx-auto mt-1"></span>
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Kebun" class="rounded-xl shadow-lg border-4 border-white">
+            <div>
+                <h3 class="text-2xl font-bold text-green-800 mb-4">Cerita</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">PT Perkebunan Nusantara III (Persero) atau PTPN III (Persero) merupakan Badan Usaha Milik Negara (BUMN) Holding Perkebunan yang bergerak di bidang pengelolaan, pengolahan, dan pemasaran hasil komoditi perkebunan.</p>
+                <h3 class="text-2xl font-bold text-green-800 mb-2">Visi</h3>
+                <p class="text-gray-600 mb-6">Menjadi perusahaan agribisnis nasional yang unggul dan berdaya saing kelas dunia serta berkontribusi secara berkesinambungan bagi kemajuan bangsa.</p>
+                <h3 class="text-2xl font-bold text-green-800 mb-4">Misi</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-green-50 p-4 rounded-lg flex items-center gap-3">
+                        <i class="fas fa-leaf text-green-600 text-2xl"></i>
+                        <span class="font-semibold text-gray-700">Produk Berkualitas</span>
                     </div>
-                    <h3 class="text-lg font-bold mb-2">Risk Register TRA</h3>
-                    <p class="text-xs text-blue-500 font-mono mb-3 uppercase">Laravel • MySQL • User Tracking</p>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Pengembangan modul log aktivitas untuk memantau setiap modifikasi data oleh user secara akurat.</p>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="group bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm hover:border-blue-400 transition-all">
-                    <div class="w-10 h-10 bg-purple-50 dark:bg-purple-900/40 rounded-lg flex items-center justify-center text-purple-600 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v4a2 2 0 00-2-2" /></svg>
+                    <div class="bg-green-50 p-4 rounded-lg flex items-center gap-3">
+                        <i class="fas fa-recycle text-green-600 text-2xl"></i>
+                        <span class="font-semibold text-gray-700">Operational Excellence</span>
                     </div>
-                    <h3 class="text-lg font-bold mb-2">Server Security Audit</h3>
-                    <p class="text-xs text-purple-500 font-mono mb-3 uppercase">SysAdmin • Ubuntu • Hardening</p>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Audit infrastruktur server dan perbaikan permission file untuk memastikan data perusahaan aman.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-10 border-t border-slate-100 dark:border-slate-800 text-center text-slate-400 text-xs tracking-widest uppercase">
-        &copy; 2026 GIOVANI CHADAVI PORTFOLIO
+    <section id="galeri" class="py-16 bg-white px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-2">Galeri</h2>
+            <p class="text-center text-gray-500 mb-10">Tinjau perkebunan dan fasilitas produksi kami</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-100 rounded-lg h-64 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1597916829826-02e5bb4a54e0?auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute bottom-4 left-4 text-white font-bold drop-shadow-md">Palm Plantation</div>
+                </div>
+                <div class="bg-gray-100 rounded-lg h-64 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute bottom-4 left-4 text-white font-bold drop-shadow-md">Palm Trees</div>
+                </div>
+                <div class="bg-gray-100 rounded-lg h-64 overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1621932953986-15fcf084da0f?auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute bottom-4 left-4 text-white font-bold drop-shadow-md">Palm Oil Processing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="produk" class="py-16 max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-2">Produk</h2>
+        <p class="text-center text-gray-500 mb-10">Produk perkebunan berkualitas tinggi untuk berbagai industri</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border hover:shadow-md transition">
+                <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=300&q=60" class="w-full h-40 object-cover rounded-xl mb-4">
+                <h4 class="font-bold text-xl mb-2">Kelapa Sawit</h4>
+                <p class="text-gray-500 text-sm">Produk utama unggulan daerah.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border hover:shadow-md transition">
+                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=300&q=60" class="w-full h-40 object-cover rounded-xl mb-4">
+                <h4 class="font-bold text-xl mb-2">Karet</h4>
+                <p class="text-gray-500 text-sm">Hasil karet alam berkualitas tinggi.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border hover:shadow-md transition">
+                <img src="https://images.unsplash.com/photo-1544733422-251e532ca221?auto=format&fit=crop&w=300&q=60" class="w-full h-40 object-cover rounded-xl mb-4">
+                <h4 class="font-bold text-xl mb-2">Teh</h4>
+                <p class="text-gray-500 text-sm">Teh pilihan dari pegunungan asri.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-16 bg-white px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-2">Kontak</h2>
+            <p class="text-center text-gray-500 mb-12">Hubungi tim kami untuk pertanyaan dan pesanan</p>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1">Nama</label>
+                        <input type="text" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1">Email</label>
+                        <input type="email" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-1">Pesan</label>
+                        <textarea class="w-full p-3 border rounded-lg h-32 focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+                    </div>
+                    <button class="bg-green-600 text-white w-full py-3 rounded-lg font-bold hover:bg-green-700 transition">Kirim Pesan</button>
+                </form>
+
+                <div class="bg-green-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6">Informasi Kami</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-green-600 mt-1"></i>
+                            <div>
+                                <p class="font-bold">Alamat</p>
+                                <p class="text-gray-600">Jl. Slt. Abdurrahman No.11, Pontianak, Kalimantan Barat</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-phone text-green-600 mt-1"></i>
+                            <div>
+                                <p class="font-bold">Telepon</p>
+                                <p class="text-gray-600">(0561) 749367</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-envelope text-green-600 mt-1"></i>
+                            <div>
+                                <p class="font-bold">Email</p>
+                                <p class="text-gray-600">ptpnusantara4@ptpn4.co</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-green-900 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <h2 class="text-xl font-bold mb-4">PT Perkebunan Nusantara IV Regional 5</h2>
+                <p class="text-green-100 mb-6">Tumbuh, Juara, Bangun Negeri.</p>
+                <div class="flex space-x-4 text-xl">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Links</h3>
+                <ul class="space-y-2 text-green-100">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="#galeri">Galeri</a></li>
+                    <li><a href="#produk">Produk</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Kontak</h3>
+                <p class="text-green-100 text-sm mb-2">Jl. Slt. Abdurrahman No.11, Sungai Bangkong, Kec. Pontianak Kota, Pontianak, Kalimantan Barat 78113</p>
+                <p class="text-green-100 text-sm">Senin - Jumat: 09:00 - 17:00</p>
+            </div>
+        </div>
+        <div class="text-center mt-12 pt-8 border-t border-green-800 text-green-200 text-sm">
+            © 2026 PT Perusahaan Nusantara. All rights reserved.
+        </div>
     </footer>
 
-    <script>
-        // --- FIXED DARK MODE LOGIC ---
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
-
-        // Set icon awal berdasarkan kondisi dark mode
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            lightIcon.classList.remove('hidden');
-        } else {
-            document.documentElement.classList.remove('dark');
-            darkIcon.classList.remove('hidden');
-        }
-
-        themeToggleBtn.addEventListener('click', function() {
-            // Toggle icons
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
-
-            // Toggle Dark Class on HTML element
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            }
-        });
-
-        // --- TYPING ANIMATION ---
-        new Typed('#typed', {
-            strings: ['Backend Developer', 'System Administrator', 'Security Auditor'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true
-        });
-    </script>
 </body>
 </html>
