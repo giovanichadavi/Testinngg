@@ -61,11 +61,15 @@
             to { width: 100% }
         }
 
-        /* Animasi Hover */
-        .hover-text-move:hover {
-            transform: translateY(-10px);
-            text-shadow: 0px 10px 20px rgba(0,0,0,0.4);
-            transition: all 0.4s ease;
+        /* Menyamakan ukuran font di smartphone agar tetap besar (Black/Bold) */
+        .font-hero-responsive {
+            font-size: 1.875rem; /* Default mobile (text-3xl) */
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .font-hero-responsive {
+                font-size: 4.5rem; /* Desktop (text-7xl) */
+            }
         }
 
         #mobile-menu { display: none; }
@@ -112,11 +116,11 @@
 
     <section id="home" class="hero-container px-4 text-center">
         <div class="hero-bg-animated"></div>
-        <div data-aos="fade-up" data-aos-duration="1500" class="flex flex-col items-center">
-            <h1 class="reveal-text text-3xl md:text-7xl font-black text-white tracking-tighter uppercase drop-shadow-2xl hover-text-move cursor-default">
+        <div data-aos="fade-up" data-aos-duration="1500" class="flex flex-col items-center w-full">
+            <h1 class="reveal-text font-hero-responsive font-black text-white tracking-tighter uppercase drop-shadow-2xl cursor-default">
                 PT PERKEBUNAN NUSANTARA IV
             </h1>
-            <h1 class="reveal-text text-3xl md:text-7xl font-black text-white mb-4 tracking-tighter uppercase drop-shadow-2xl hover-text-move cursor-default" style="animation-delay: 0.5s;">
+            <h1 class="reveal-text font-hero-responsive font-black text-white mb-4 tracking-tighter uppercase drop-shadow-2xl cursor-default" style="animation-delay: 0.5s;">
                 REGIONAL 5
             </h1>
             <p class="text-xl md:text-3xl text-green-300 font-black italic drop-shadow-lg" data-aos="fade-up" data-aos-delay="1200">
@@ -134,7 +138,7 @@
                 <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=800&q=80" class="w-full h-60 object-cover">
                 <div class="p-8">
                     <span class="text-ptpn-green font-black text-xs uppercase">Produksi</span>
-                    <h3 class="text-xl font-black mt-2 mb-4">Capaian Target Panen 2024</h3>
+                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Capaian Target Panen 2024</h3>
                     <p class="text-gray-500 text-sm mb-6">Regional 5 terus mengoptimalkan proses operasional di lapangan...</p>
                     <a href="#" class="text-sm font-black border-b-4 border-ptpn-green">LIHAT BERITA</a>
                 </div>
@@ -143,7 +147,7 @@
                 <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" class="w-full h-60 object-cover">
                 <div class="p-8">
                     <span class="text-ptpn-green font-black text-xs uppercase">Ekosistem</span>
-                    <h3 class="text-xl font-black mt-2 mb-4">Penghijauan Area Konservasi</h3>
+                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Penghijauan Area Konservasi</h3>
                     <p class="text-gray-500 text-sm mb-6">Komitmen kami terhadap lingkungan dan keberlanjutan hayati...</p>
                     <a href="#" class="text-sm font-black border-b-4 border-ptpn-green">LIHAT BERITA</a>
                 </div>
@@ -152,7 +156,7 @@
                 <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" class="w-full h-60 object-cover">
                 <div class="p-8">
                     <span class="text-ptpn-green font-black text-xs uppercase">CSR</span>
-                    <h3 class="text-xl font-black mt-2 mb-4">Bantuan Pendidikan Desa</h3>
+                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Bantuan Pendidikan Desa</h3>
                     <p class="text-gray-500 text-sm mb-6">Mendorong kualitas pendidikan bagi generasi penerus di desa binaan...</p>
                     <a href="#" class="text-sm font-black border-b-4 border-ptpn-green">LIHAT BERITA</a>
                 </div>
