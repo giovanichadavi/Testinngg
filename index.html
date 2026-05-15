@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PTPN IV Regional 5 - Tumbuh, Juara, Bangun Negeri</title>
+    <title>PTPN IV Regional 5</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -56,25 +56,27 @@
             animation: typing 2.5s steps(40, end), blink .75s step-end infinite;
         }
 
-        /* Fix Smartphone Layout */
+        /* Samakan Font & Gaya di Smartphone */
         @media (max-width: 768px) {
             .reveal-text {
                 white-space: normal;
                 animation: fadeInText 2s ease-out forwards;
                 border-right: none;
                 width: 100% !important;
+                font-weight: 900 !important; /* Paksa tetap Black */
             }
             .font-hero-responsive {
-                font-size: 1.75rem;
-                line-height: 1.2;
+                font-size: 2rem;
+                line-height: 1.1;
+            }
+            /* Pastikan garis bawah tetap muncul di smartphone */
+            .section-title {
+                border-bottom-width: 8px !important;
+                display: inline-block !important;
             }
         }
 
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
+        @keyframes typing { from { width: 0 } to { width: 100% } }
         @keyframes fadeInText {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -99,7 +101,6 @@
         .img-box img { transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
         .img-box:hover img { transform: scale(1.1) rotate(1deg); }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #007d3c; border-radius: 10px; }
@@ -111,7 +112,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-4">
-                    <img src="logo.jpeg" alt="Logo PTPN IV" class="h-10 md:h-12 object-contain">
+                    <img src="logo.jpeg" alt="Logo" class="h-10 md:h-12 object-contain">
                     <div class="hidden sm:block border-l border-gray-200 pl-4">
                         <span class="font-black text-ptpn-green text-xl leading-none">PTPN IV</span>
                         <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Regional 5</p>
@@ -125,25 +126,25 @@
                     <button class="bg-ptpn-green text-white px-6 py-2 rounded-full uppercase shadow-lg hover:bg-ptpn-dark transition">Login</button>
                 </div>
                 <div class="md:hidden flex items-center gap-3">
-                    <button id="hamburger" class="text-ptpn-dark p-2" aria-label="Menu Utama"><i class="fas fa-bars text-2xl"></i></button>
+                    <button id="hamburger" class="text-ptpn-dark p-2"><i class="fas fa-bars text-2xl"></i></button>
                 </div>
             </div>
         </div>
         <div id="mobile-menu" class="md:hidden bg-white border-t p-6 shadow-xl absolute w-full z-50">
-            <a href="#home" class="block font-black text-gray-700 py-2 hover:text-ptpn-green">HOME</a>
-            <a href="#news" class="block font-black text-gray-700 py-2 hover:text-ptpn-green">NEWS</a>
-            <a href="#produk" class="block font-black text-gray-700 py-2 hover:text-ptpn-green">PRODUK</a>
-            <a href="#kontak" class="block font-black text-gray-700 py-2 hover:text-ptpn-green">KONTAK</a>
+            <a href="#home" class="block font-black text-gray-700 py-2">HOME</a>
+            <a href="#news" class="block font-black text-gray-700 py-2">NEWS</a>
+            <a href="#produk" class="block font-black text-gray-700 py-2">PRODUK</a>
+            <a href="#kontak" class="block font-black text-gray-700 py-2">KONTAK</a>
         </div>
     </nav>
 
     <section id="home" class="hero-container px-4 text-center">
         <div class="hero-bg-animated"></div>
         <div data-aos="fade-up" data-aos-duration="1500" class="flex flex-col items-center w-full">
-            <h1 class="reveal-text font-hero-responsive font-black text-white tracking-tighter uppercase drop-shadow-2xl hover-text-move cursor-default leading-tight">
+            <h1 class="reveal-text font-hero-responsive font-black text-white tracking-tighter uppercase drop-shadow-2xl hover-text-move cursor-default">
                 PT PERKEBUNAN NUSANTARA IV
             </h1>
-            <h1 class="reveal-text font-hero-responsive font-black text-white mb-4 tracking-tighter uppercase drop-shadow-2xl hover-text-move cursor-default leading-tight" style="animation-delay: 0.5s;">
+            <h1 class="reveal-text font-hero-responsive font-black text-white mb-4 tracking-tighter uppercase drop-shadow-2xl hover-text-move cursor-default" style="animation-delay: 0.5s;">
                 REGIONAL 5
             </h1>
             <p class="text-xl md:text-3xl text-green-300 font-black italic drop-shadow-lg" data-aos="fade-up" data-aos-delay="1200">
@@ -153,16 +154,16 @@
     </section>
 
     <section id="news" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-20" data-aos="fade-up" data-aos-duration="1000">
-            <h2 class="text-4xl font-black uppercase inline-block border-b-8 border-ptpn-green pb-2 leading-none">Berita Terbaru</h2>
+        <div class="text-center mb-20" data-aos="fade-up">
+            <h2 class="section-title text-4xl font-black uppercase inline-block border-b-8 border-ptpn-green pb-2">Berita Terbaru</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl img-box border border-gray-100" data-aos="fade-up">
+            <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl img-box border border-gray-100" data-aos="fade-right">
                 <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=800&q=80" class="w-full h-60 object-cover">
                 <div class="p-8">
                     <span class="text-ptpn-green font-black text-xs uppercase tracking-tighter">Produksi</span>
-                    <h3 class="text-xl font-black mt-2 mb-4 leading-snug">Capaian Target Panen 2024</h3>
-                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Regional 5 terus mengoptimalkan proses operasional di lapangan untuk menjaga stabilitas produksi nasional.</p>
+                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Capaian Target Panen 2024</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Regional 5 terus mengoptimalkan proses operasional di lapangan.</p>
                     <a href="#" class="text-sm font-black border-b-4 border-ptpn-green inline-block pb-1">LIHAT BERITA</a>
                 </div>
             </div>
@@ -170,17 +171,17 @@
                 <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" class="w-full h-60 object-cover">
                 <div class="p-8">
                     <span class="text-ptpn-green font-black text-xs uppercase tracking-tighter">Ekosistem</span>
-                    <h3 class="text-xl font-black mt-2 mb-4 leading-snug">Penghijauan Area Konservasi</h3>
-                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Komitmen kami terhadap lingkungan dan keberlanjutan hayati melalui program penanaman pohon asli.</p>
+                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Penghijauan Konservasi</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Komitmen kami terhadap lingkungan hidup berkelanjutan.</p>
                     <a href="#" class="text-sm font-black border-b-4 border-ptpn-green inline-block pb-1">LIHAT BERITA</a>
                 </div>
             </div>
-            <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl img-box border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-xl img-box border border-gray-100" data-aos="fade-left" data-aos-delay="400">
                 <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" class="w-full h-60 object-cover">
                 <div class="p-8">
                     <span class="text-ptpn-green font-black text-xs uppercase tracking-tighter">CSR</span>
-                    <h3 class="text-xl font-black mt-2 mb-4 leading-snug">Bantuan Pendidikan Desa Sekitar</h3>
-                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Mendorong kualitas pendidikan bagi generasi penerus di desa binaan melalui beasiswa dan sarana sekolah.</p>
+                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Bantuan Pendidikan Desa</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">Mendorong kualitas pendidikan masyarakat desa binaan.</p>
                     <a href="#" class="text-sm font-black border-b-4 border-ptpn-green inline-block pb-1">LIHAT BERITA</a>
                 </div>
             </div>
@@ -189,63 +190,53 @@
 
     <section id="produk" class="py-24 bg-ptpn-light px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-20 uppercase text-ptpn-darkleading-none" data-aos="zoom-in-up" data-aos-duration="1000">Komoditas Unggulan</h2>
+            <h2 class="section-title text-4xl font-black text-center mb-20 uppercase text-ptpn-dark block mx-auto border-b-8 border-ptpn-green pb-2 w-fit" data-aos="zoom-in">Komoditas Unggulan</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                 <div class="group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="img-box h-72 mb-6 shadow-2xl border-none"> 
-                        <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="text-2xl font-black text-ptpn-dark uppercase tracking-tighter leading-tight">Kelapa Sawit</h4>
+                    <div class="img-box h-72 mb-6 shadow-2xl"><img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover"></div>
+                    <h4 class="text-2xl font-black text-ptpn-dark uppercase tracking-tighter">Kelapa Sawit</h4>
                 </div>
                 <div class="group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="img-box h-72 mb-6 shadow-2xl border-none"> 
-                        <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="text-2xl font-black text-ptpn-dark uppercase tracking-tighter leading-tight">Margarin</h4>
+                    <div class="img-box h-72 mb-6 shadow-2xl"><img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover"></div>
+                    <h4 class="text-2xl font-black text-ptpn-dark uppercase tracking-tighter">Margarin</h4>
                 </div>
                 <div class="group" data-aos="fade-up" data-aos-delay="500">
-                    <div class="img-box h-72 mb-6 shadow-2xl border-none"> 
-                        <img src="https://images.unsplash.com/photo-1532635241-17e820acc59f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="text-2xl font-black text-ptpn-dark uppercase tracking-tighter leading-tight">Bio Diesel</h4>
+                    <div class="img-box h-72 mb-6 shadow-2xl"><img src="https://images.unsplash.com/photo-1532635241-17e820acc59f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover"></div>
+                    <h4 class="text-2xl font-black text-ptpn-dark uppercase tracking-tighter">Bio Diesel</h4>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="kontak" class="py-24 px-6 bg-white">
-        <div class="max-w-7xl mx-auto" data-aos="zoom-in" data-aos-duration="1200">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black uppercase text-ptpn-dark inline-block border-b-8 border-ptpn-green pb-2 leading-none">Kontak & Lokasi</h2>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-white">
-                <div class="bg-ptpn-dark p-10 md:p-12 rounded-[3rem] shadow-xl flex flex-col space-y-10">
-                    <h3 class="text-3xl font-black uppercase leading-tight border-b-4 border-ptpn-green pb-4">Info Kami</h3>
-                    <div class="space-y-6 font-bold text-lg leading-snug">
-                        <p class="flex items-start gap-4"><i class="fas fa-map-marker-alt text-green-400 mt-1"></i> Jl. Slt. Abdurrahman No.11, Sungai Bangkong, Pontianak</p>
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="bg-ptpn-dark p-10 md:p-12 rounded-[3rem] shadow-xl text-white flex flex-col space-y-8" data-aos="fade-right">
+                    <h3 class="text-3xl font-black uppercase border-b-4 border-ptpn-green pb-4">Info Kami</h3>
+                    <div class="space-y-6 font-bold text-lg">
+                        <p class="flex items-start gap-4"><i class="fas fa-map-marker-alt text-green-400 mt-1"></i> Jl. Slt. Abdurrahman No.11, Pontianak</p>
                         <p class="flex items-center gap-4"><i class="fas fa-phone-alt text-green-400"></i> (0561) 749367</p>
                         <p class="flex items-center gap-4"><i class="fas fa-envelope text-green-400"></i> ptpn4@ptpn4.co.id</p>
                     </div>
                 </div>
 
-                <div class="bg-ptpn-light p-10 md:p-12 rounded-[3rem] shadow-inner border border-green-50 flex flex-col justify-center items-center text-center">
-                    <h4 class="text-sm font-black uppercase text-gray-500 mb-2 tracking-widest leading-none">Total Luas Lahan Terkelola</h4>
+                <div class="bg-ptpn-light p-10 md:p-12 rounded-[3rem] shadow-inner border border-green-50 flex flex-col justify-center items-center text-center" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-sm font-black uppercase text-gray-500 mb-2 tracking-widest">Luas Lahan Terkelola</h4>
                     <div class="flex items-baseline gap-2">
                         <span class="text-6xl font-black text-ptpn-green leading-none">54.210</span>
                         <span class="text-2xl font-bold text-ptpn-dark uppercase leading-none">HA</span>
                     </div>
-                    <p class="text-[11px] text-gray-400 mt-3 italic leading-relaxed">*Data operasional Regional 5 tahun 2024</p>
+                    <p class="text-[11px] text-gray-400 mt-3 italic">*Regional 5 - Tahun 2024</p>
                 </div>
 
-                <div class="rounded-[3rem] overflow-hidden shadow-xl border border-gray-100 flex flex-col min-h-[350px]">
+                <div class="rounded-[3rem] overflow-hidden shadow-xl border border-gray-100 flex flex-col min-h-[350px]" data-aos="fade-left" data-aos-delay="400">
                     <div class="bg-white p-6 border-b border-gray-100">
-                        <h4 class="text-xl font-black uppercase text-ptpn-dark leading-tight">Lokasi Kami</h4>
+                        <h4 class="text-xl font-black uppercase text-ptpn-dark">Lokasi Kami</h4>
                         <div class="h-2 bg-ptpn-green w-20 mt-2 rounded-full"></div>
                     </div>
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8166299105!2d109.32431691475143!3d-0.03541529997409241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d585461a35569%3A0xc3f60f61404c0049!2sPTPN%20IV%20Regional%20V!5e0!3m2!1sid!2sid!4v1716386850020!5m2!1sid!2sid" 
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi PTPN IV Regional 5">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.817812328406!2d109.3248383!3d-0.0381666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d58548970876b%3A0x673065b211158f33!2sJl.%20Sultan%20Abdurrahman%20No.11%2C%20Akcaya%2C%20Kec.%20Pontianak%20Sel.%2C%20Kota%20Pontianak%2C%20Kalimantan%20Barat%2078121!5e0!3m2!1sid!2sid!4v1715780000000" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
@@ -254,13 +245,13 @@
 
     <footer class="bg-ptpn-dark text-white py-16 px-8">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-sm">
-            <div data-aos="fade-right">
+            <div>
                 <img src="logo.jpeg" alt="Logo" class="h-12 mb-4 object-contain">
                 <p class="font-black uppercase text-lg mb-2 leading-tight">PTPN IV <br> Regional 5</p>
                 <p class="text-xs text-green-100/70 leading-relaxed">Pionir agribisnis perkebunan nasional.</p>
             </div>
-            <div data-aos="fade-up">
-                <h4 class="text-green-400 font-black mb-6 uppercase tracking-widest border-l-4 border-white pl-4">Navigasi</h4>
+            <div>
+                <h4 class="text-green-400 font-black mb-6 uppercase tracking-widest border-l-4 border-white pl-4 text-xs">Navigasi</h4>
                 <ul class="space-y-3 font-bold text-sm uppercase">
                     <li><a href="#home" class="hover:translate-x-2 transition-transform inline-block">Home</a></li>
                     <li><a href="#news" class="hover:translate-x-2 transition-transform inline-block">News</a></li>
@@ -268,18 +259,18 @@
                     <li><a href="#kontak" class="hover:translate-x-2 transition-transform inline-block">Kontak</a></li>
                 </ul>
             </div>
-            <div data-aos="fade-up" data-aos-delay="200">
+            <div>
                 <h4 class="text-green-400 font-black mb-6 uppercase tracking-widest border-l-4 border-white pl-4 text-xs">Media Sosial</h4>
                 <div class="flex space-x-5 text-2xl text-white">
-                    <a href="#" class="hover:text-green-400 transition-colors" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="hover:text-green-400 transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:text-green-400 transition-colors" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="hover:text-green-400 transition-colors"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-green-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-green-400 transition-colors"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
-            <div data-aos="fade-left">
+            <div>
                 <h4 class="text-green-400 font-black mb-6 uppercase tracking-widest border-l-4 border-white pl-4 text-xs">Waktu Kerja</h4>
                 <div class="bg-ptpn-green/20 p-5 rounded-[1.5rem] space-y-2 font-bold border border-white/10 text-xs">
-                    <p class="flex justify-between font-black"><span>Senin - Jumat:</span> <span>08:00 - 17:00</span></p>
+                    <p class="flex justify-between"><span>Senin - Jumat:</span> <span>08:00 - 17:00</span></p>
                     <p class="flex justify-between text-red-300 font-black"><span>Sabtu - Minggu:</span> <span>LIBUR</span></p>
                 </div>
             </div>
