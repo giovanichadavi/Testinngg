@@ -1,159 +1,175 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio | Software Developer</title>
+    <title>Giovani | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .gradient-text { background: linear-gradient(135deg, #60a5fa 0%, #c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .blob { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0,0,0,0) 70%); filter: blur(40px); z-index: -1; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="bg-[#0f172a] text-slate-200 antialiased overflow-x-hidden">
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-blue-600 tracking-tight">DANUMTAKA.DEV</h1>
-            <div class="space-x-6 hidden md:block">
-                <a href="#about" class="hover:text-blue-600 transition">Tentang</a>
-                <a href="#projects" class="hover:text-blue-600 transition">Proyek</a>
-                <a href="#skills" class="hover:text-blue-600 transition">Skill</a>
-                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Kontak</a>
+    <!-- Blobs Decoration -->
+    <div class="blob top-[-10%] left-[-10%]"></div>
+    <div class="blob bottom-[-10%] right-[-10%]"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-extrabold tracking-tighter gradient-text">GIOVANI</span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#skills" class="hover:text-blue-400 transition">Expertise</a>
+                <a href="#contact" class="text-blue-400 border border-blue-400/30 px-4 py-1.5 rounded-full hover:bg-blue-400/10 transition">Hire Me</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="max-w-6xl mx-auto px-4 py-20 flex flex-col md:flex-row items-center">
-        <div class="md:w-2/3">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
-                Membangun Sistem Web yang <span class="text-blue-600">Aman & Terukur</span>
-            </h2>
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                Software Developer & System Administrator yang berfokus pada pengembangan backend menggunakan Laravel dan pengelolaan infrastruktur server.
+    <section class="pt-40 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold mb-6 tracking-widest uppercase">
+                Available for New Projects
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+                Backend Architect & <br><span class="gradient-text">Systems Security.</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Saya membangun aplikasi web yang kompleks dengan Laravel dan mengamankan infrastruktur server melalui audit keamanan tingkat lanjut.
             </p>
-            <div class="flex space-x-4">
-                <a href="#projects" class="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-black transition">Lihat Projek</a>
-                <a href="https://github.com" class="border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">GitHub</a>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold shadow-lg shadow-blue-600/20 transition-all transform hover:-translate-y-1">
+                    Lihat Portofolio Proyek
+                </a>
+                <a href="#contact" class="glass text-white px-8 py-4 rounded-2xl font-bold hover:bg-white/5 transition-all">
+                    Hubungi Saya
+                </a>
             </div>
         </div>
-        <div class="md:w-1/3 mt-10 md:mt-0 flex justify-center">
-            <div class="w-64 h-64 bg-blue-100 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
-                <i class="fas fa-code text-blue-600 text-6xl"></i>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">Featured Projects</h2>
+                    <p class="text-slate-400 text-sm">Hasil kurasi pekerjaan terbaik saya dalam pengembangan sistem.</p>
+                </div>
+                <div class="hidden md:block h-[1px] flex-1 bg-slate-800 mx-10 mb-4"></div>
             </div>
-        </div>
-    </header>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-12 text-center">Proyek Terbaru</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project Card 1 -->
-                <div class="group border rounded-xl overflow-hidden hover:shadow-xl transition shadow-sm">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <i class="fas fa-project-diagram text-gray-400 text-4xl group-hover:scale-110 transition"></i>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-blue-500 uppercase">Web App</span>
-                        <h4 class="text-xl font-bold mt-2">Sistem Manajemen Risiko (Risk Register)</h4>
-                        <p class="text-gray-600 text-sm mt-3">Sistem audit internal untuk memantau perubahan data dan log aktivitas user secara real-time.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-gray-100 px-2 py-1 rounded text-xs">Laravel</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-xs">AdminLTE</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-xs">MySQL</span>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1: Risk Management -->
+                <div class="group relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative glass p-8 rounded-3xl">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 text-blue-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Enterprise Risk Register</h3>
+                        <p class="text-slate-400 mb-6 text-sm leading-relaxed">Sistem backend berbasis Laravel untuk mengelola daftar risiko divisi, lengkap dengan audit trail untuk melacak modifikasi data secara mendetail.</p>
+                        <div class="flex flex-wrap gap-2 mb-8 text-xs font-mono">
+                            <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded-full">Laravel 10</span>
+                            <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded-full">MySQL</span>
+                            <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded-full">AdminLTE</span>
+                        </div>
+                        <a href="#" class="text-blue-400 font-bold flex items-center group/link">
+                            Case Study <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-4 h-4 transition-transform group-hover/link:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Project Card 2 -->
-                <div class="group border rounded-xl overflow-hidden hover:shadow-xl transition shadow-sm">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <i class="fas fa-server text-gray-400 text-4xl group-hover:scale-110 transition"></i>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-blue-500 uppercase">Infrastructure</span>
-                        <h4 class="text-xl font-bold mt-2">Server Optimization & Security</h4>
-                        <p class="text-gray-600 text-sm mt-3">Konfigurasi server production, manajemen file permission, dan audit keamanan database.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-gray-100 px-2 py-1 rounded text-xs">SysAdmin</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-xs">SSH</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-xs">Vulnerability Scan</span>
+                <!-- Project 2: Security Audit -->
+                <div class="group relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative glass p-8 rounded-3xl">
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 text-purple-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
                         </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Server Hardening & Audit</h3>
+                        <p class="text-slate-400 mb-6 text-sm leading-relaxed">Pengelolaan infrastruktur server Linux (Ubuntu/CentOS), konfigurasi permission folder yang aman, dan implementasi brute-force protection.</p>
+                        <div class="flex flex-wrap gap-2 mb-8 text-xs font-mono">
+                            <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded-full">Cyber Security</span>
+                            <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded-full">SysAdmin</span>
+                            <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded-full">Bash</span>
+                        </div>
+                        <a href="#" class="text-purple-400 font-bold flex items-center group/link">
+                            Technical Docs <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-4 h-4 transition-transform group-hover/link:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Project Card 3 -->
-                <div class="group border rounded-xl overflow-hidden hover:shadow-xl transition shadow-sm">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <i class="fas fa-chart-line text-gray-400 text-4xl group-hover:scale-110 transition"></i>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-blue-500 uppercase">Fintech</span>
-                        <h4 class="text-xl font-bold mt-2">Crypto Trading Dashboard</h4>
-                        <p class="text-gray-600 text-sm mt-3">Dashboard analitik untuk melacak metrik keuangan seperti cost price dan profit/loss pada aset digital.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="bg-gray-100 px-2 py-1 rounded text-xs">API Integration</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-xs">PHP</span>
-                            <span class="bg-gray-100 px-2 py-1 rounded text-xs">Binance API</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-12 text-center">Tech Stack</h3>
-            <div class="flex flex-wrap justify-center gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white shadow rounded-lg flex items-center justify-center mb-2 mx-auto">
-                        <i class="fab fa-laravel text-red-500 text-3xl"></i>
-                    </div>
-                    <p class="font-medium">Laravel</p>
+    <section id="skills" class="py-24 glass border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Core Tech</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span> PHP / Laravel</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span> JavaScript / Node.js</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span> MySQL / PostgreSQL</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span> RESTful API Design</li>
+                    </ul>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white shadow rounded-lg flex items-center justify-center mb-2 mx-auto">
-                        <i class="fab fa-php text-indigo-500 text-3xl"></i>
-                    </div>
-                    <p class="font-medium">PHP</p>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Infrastructure</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></span> Linux Server (Ubuntu)</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></span> Nginx / Apache</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></span> Docker Basics</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></span> SSH Key Management</li>
+                    </ul>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white shadow rounded-lg flex items-center justify-center mb-2 mx-auto">
-                        <i class="fas fa-database text-blue-500 text-3xl"></i>
-                    </div>
-                    <p class="font-medium">MySQL</p>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Security</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-pink-500 rounded-full mr-3"></span> Vulnerability Scanning</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-pink-500 rounded-full mr-3"></span> SQL Injection Prevention</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-pink-500 rounded-full mr-3"></span> Password Hashing (BCrypt)</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-pink-500 rounded-full mr-3"></span> Server Hardening</li>
+                    </ul>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white shadow rounded-lg flex items-center justify-center mb-2 mx-auto">
-                        <i class="fas fa-shield-alt text-green-500 text-3xl"></i>
-                    </div>
-                    <p class="font-medium">Cyber Security</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white shadow rounded-lg flex items-center justify-center mb-2 mx-auto">
-                        <i class="fas fa-terminal text-gray-700 text-3xl"></i>
-                    </div>
-                    <p class="font-medium">Linux/SysAdmin</p>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Creative</h3>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span> Image Upscaling</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span> Portrait Enhancement</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span> UI Customization</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span> Data Visualization</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer id="contact" class="bg-gray-900 text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold mb-4">Ayo Berdiskusi Proyek Selanjutnya</h3>
-            <p class="text-gray-400 mb-8">Tersedia untuk proyek freelance atau kolaborasi teknis.</p>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
-                <a href="mailto:email@anda.com" class="hover:text-blue-400 transition text-2xl"><i class="fas fa-envelope"></i></a>
+    <!-- Footer -->
+    <footer id="contact" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Let's Build Something Together</h2>
+            <p class="text-slate-400 mb-10">Sedang mencari developer untuk sistem backend atau audit keamanan?</p>
+            <a href="mailto:hi@giovanichadavi.com" class="text-2xl md:text-4xl font-bold text-white hover:text-blue-400 transition-colors break-all">
+                hello@giovanichadavi.com
+            </a>
+            <div class="mt-16 flex justify-center space-x-8">
+                <a href="#" class="text-slate-500 hover:text-white transition">LinkedIn</a>
+                <a href="#" class="text-slate-500 hover:text-white transition">GitHub</a>
+                <a href="#" class="text-slate-500 hover:text-white transition">Instagram</a>
             </div>
-            <p class="mt-12 text-gray-500 text-sm">© 2026 Danumtaka. All rights reserved.</p>
+            <p class="mt-12 text-slate-600 text-xs tracking-widest uppercase">
+                &copy; 2026 GIOVANI PORTFOLIO. Built with Passion.
+            </p>
         </div>
     </footer>
 
