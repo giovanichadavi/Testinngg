@@ -23,33 +23,43 @@
     <style>
         html { scroll-behavior: smooth; overflow-x: hidden; }
         body { overflow-x: hidden; }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('header.jpg');
+        
+        /* Animasi Bergerak untuk Foto Header (Ken Burns Effect) */
+        .hero-container {
+            position: relative;
+            height: 75vh;
+            overflow: hidden;
+        }
+        .hero-bg-animated {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('header.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            animation: kenburns 20s infinite alternate;
+            z-index: -1;
         }
+        @keyframes kenburns {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+
         .glass-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
         #mobile-menu { display: none; }
         #mobile-menu.active { display: block; }
         
-        /* Animasi kursor pada gambar */
-        .hover-zoom img {
-            transition: transform 0.5s ease;
-        }
-        .hover-zoom:hover img {
-            transform: scale(1.1);
-        }
+        .hover-zoom img { transition: transform 0.5s ease; }
+        .hover-zoom:hover img { transform: scale(1.1); }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
 
-    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-[100]">
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-[100]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-4">
@@ -64,11 +74,12 @@
                     <a href="#home" class="text-sm font-bold text-gray-600 hover:text-ptpn-green transition">HOME</a>
                     <a href="#news" class="text-sm font-bold text-gray-600 hover:text-ptpn-green transition">NEWS</a>
                     <a href="#produk" class="text-sm font-bold text-gray-600 hover:text-ptpn-green transition">PRODUK</a>
-                    <a href="#kontak" class="text-sm font-bold text-gray-600 hover:text-ptpn-green transition">KONTAK</a>
+                    <a href="#kontak" class="text-sm font-bold text-gray-600 hover:text-ptpn-green transition font-black">KONTAK</a>
                     <button class="bg-ptpn-green text-white px-6 py-2 rounded-full font-black text-xs uppercase shadow-lg">Login</button>
                 </div>
 
-                <div class="md:hidden flex items-center">
+                <div class="md:hidden flex items-center gap-3">
+                    <button class="bg-ptpn-green text-white px-4 py-1.5 rounded-lg text-xs font-bold uppercase">Login</button>
                     <button id="hamburger" class="text-ptpn-dark p-2"><i class="fas fa-bars text-2xl"></i></button>
                 </div>
             </div>
@@ -81,11 +92,15 @@
         </div>
     </nav>
 
-    <section id="home" class="hero-bg h-[70vh] flex items-center justify-center text-center px-4">
+    <section id="home" class="hero-container flex items-center justify-center text-center px-4">
+        <div class="hero-bg-animated"></div>
         <div class="glass-card p-10 md:p-16 rounded-[40px] max-w-4xl" data-aos="zoom-in">
-            <h1 class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter uppercase">PTPN IV Regional 5</h1>
-            <p class="text-xl md:text-2xl text-green-300 font-bold italic mb-8">Tumbuh, Juara, Bangun Negeri</p>
-            <a href="#news" class="bg-ptpn-green text-white px-10 py-4 rounded-full font-black uppercase text-sm shadow-2xl hover:bg-ptpn-dark transition">Baca Berita Terbaru</a>
+            <h1 class="text-3xl md:text-6xl font-black text-white mb-4 tracking-tighter uppercase drop-shadow-lg">PTPN IV Regional 5</h1>
+            <p class="text-lg md:text-2xl text-green-300 font-bold italic mb-8 drop-shadow-md">Tumbuh, Juara, Bangun Negeri</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#produk" class="bg-ptpn-green text-white px-8 py-3 rounded-full font-black uppercase text-xs shadow-xl">Produk Kami</a>
+                <a href="#kontak" class="bg-white/90 text-ptpn-green px-8 py-3 rounded-full font-black uppercase text-xs shadow-xl">Hubungi Kami</a>
+            </div>
         </div>
     </section>
 
@@ -94,15 +109,15 @@
             <h2 class="text-4xl font-black uppercase inline-block border-b-4 border-ptpn-green pb-2">Latest News</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="bg-white rounded-[30px] overflow-hidden shadow-lg hover-zoom" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-white rounded-[30px] overflow-hidden shadow-lg hover-zoom" data-aos="fade-up">
                 <div class="h-56 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                 </div>
                 <div class="p-8">
                     <span class="text-ptpn-green font-black text-xs uppercase tracking-widest">Operasional</span>
-                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Peningkatan Produksi Sawit Semester I 2024</h3>
-                    <p class="text-gray-500 text-sm mb-6">PTPN IV Regional 5 mencatat kenaikan signifikan dalam efisiensi panen...</p>
-                    <a href="#" class="text-ptpn-dark font-black text-sm border-b-2 border-ptpn-green">BACA SELENGKAPNYA</a>
+                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Peningkatan Produksi Sawit 2024</h3>
+                    <p class="text-gray-500 text-sm mb-6">Efisiensi operasional di Regional 5 menunjukkan tren positif...</p>
+                    <a href="#" class="text-ptpn-dark font-black text-sm border-b-2 border-ptpn-green">BACA</a>
                 </div>
             </div>
             <div class="bg-white rounded-[30px] overflow-hidden shadow-lg hover-zoom" data-aos="fade-up" data-aos-delay="200">
@@ -110,21 +125,21 @@
                     <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                 </div>
                 <div class="p-8">
-                    <span class="text-ptpn-green font-black text-xs uppercase tracking-widest">Sustainability</span>
-                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Program Reboisasi Lahan Berkelanjutan</h3>
-                    <p class="text-gray-500 text-sm mb-6">Langkah nyata dalam menjaga ekosistem sekitar perkebunan dengan menanam...</p>
-                    <a href="#" class="text-ptpn-dark font-black text-sm border-b-2 border-ptpn-green">BACA SELENGKAPNYA</a>
+                    <span class="text-ptpn-green font-black text-xs uppercase tracking-widest">Lingkungan</span>
+                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Komitmen Green Plantation</h3>
+                    <p class="text-gray-500 text-sm mb-6">Langkah strategis menuju perkebunan yang ramah ekosistem...</p>
+                    <a href="#" class="text-ptpn-dark font-black text-sm border-b-2 border-ptpn-green">BACA</a>
                 </div>
             </div>
-            <div class="bg-white rounded-[30px] overflow-hidden shadow-lg hover-zoom" data-aos="fade-up" data-aos-delay="300">
+            <div class="bg-white rounded-[30px] overflow-hidden shadow-lg hover-zoom" data-aos="fade-up" data-aos-delay="400">
                 <div class="h-56 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                 </div>
                 <div class="p-8">
-                    <span class="text-ptpn-green font-black text-xs uppercase tracking-widest">CSR</span>
-                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Pemberdayaan Masyarakat Lokal di Kalimantan</h3>
-                    <p class="text-gray-500 text-sm mb-6">Melalui program kemitraan, PTPN IV terus mendorong ekonomi warga sekitar...</p>
-                    <a href="#" class="text-ptpn-dark font-black text-sm border-b-2 border-ptpn-green">BACA SELENGKAPNYA</a>
+                    <span class="text-ptpn-green font-black text-xs uppercase tracking-widest">Sosial</span>
+                    <h3 class="text-xl font-black mt-2 mb-4 leading-tight">Pemberdayaan Ekonomi Desa</h3>
+                    <p class="text-gray-500 text-sm mb-6">Program CSR yang menyasar kesejahteraan masyarakat sekitar...</p>
+                    <a href="#" class="text-ptpn-dark font-black text-sm border-b-2 border-ptpn-green">BACA</a>
                 </div>
             </div>
         </div>
@@ -137,82 +152,15 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                 <div class="group" data-aos="flip-left">
-                    <div class="h-64 rounded-[40px] overflow-hidden shadow-2xl mb-6 bg-white border-8 border-white">
-                        <img src="https://images.unsplash.com/photo-1474979266404-7eaacabc88c5?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="h-64 rounded-[40px] overflow-hidden shadow-2xl mb-6 bg-white border-8 border-white hover-zoom">
+                        <img src="https://images.unsplash.com/photo-1474979266404-7eaacabc88c5?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="text-2xl font-black text-ptpn-dark">Minyak Kelapa Sawit</h4>
+                    <h4 class="text-2xl font-black text-ptpn-dark uppercase">Minyak Goreng</h4>
                 </div>
                 <div class="group" data-aos="flip-left" data-aos-delay="200">
-                    <div class="h-64 rounded-[40px] overflow-hidden shadow-2xl mb-6 bg-white border-8 border-white">
-                        <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="h-64 rounded-[40px] overflow-hidden shadow-2xl mb-6 bg-white border-8 border-white hover-zoom">
+                        <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                     </div>
-                    <h4 class="text-2xl font-black text-ptpn-dark">Margarin</h4>
+                    <h4 class="text-2xl font-black text-ptpn-dark uppercase">Margarin</h4>
                 </div>
-                <div class="group" data-aos="flip-left" data-aos-delay="400">
-                    <div class="h-64 rounded-[40px] overflow-hidden shadow-2xl mb-6 bg-white border-8 border-white">
-                        <img src="https://images.unsplash.com/photo-1590231575450-48e02d645e5a?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    </div>
-                    <h4 class="text-2xl font-black text-ptpn-dark">Bio Diesel</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="kontak" class="py-24 px-6 bg-white">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 bg-ptpn-dark rounded-[50px] p-8 md:p-16 text-white" data-aos="fade-up">
-            <div class="space-y-6">
-                <h2 class="text-4xl font-black uppercase">Hubungi Kami</h2>
-                <p class="text-green-200 font-medium">Ada pertanyaan? Tim profesional kami siap membantu Anda.</p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-xl text-green-400"></i> <p>Jl. Slt. Abdurrahman No.11, Pontianak</p></div>
-                    <div class="flex items-center gap-4"><i class="fas fa-phone-alt text-xl text-green-400"></i> <p>(0561) 749367</p></div>
-                    <div class="flex items-center gap-4"><i class="fas fa-envelope text-xl text-green-400"></i> <p>ptpn4@ptpn4.co.id</p></div>
-                </div>
-            </div>
-            <form class="space-y-4">
-                <input type="text" placeholder="Nama" class="w-full p-4 bg-white/10 border border-white/20 rounded-2xl outline-none focus:bg-white/20 transition">
-                <textarea placeholder="Pesan" class="w-full p-4 bg-white/10 border border-white/20 rounded-2xl h-32 outline-none focus:bg-white/20 transition"></textarea>
-                <button class="bg-green-500 w-full py-4 rounded-2xl font-black uppercase hover:bg-white hover:text-ptpn-dark transition">Kirim Pesan</button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="bg-gray-900 text-gray-400 py-20 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
-            <div data-aos="fade-right">
-                <img src="logo.jpeg" alt="Logo" class="h-14 mb-6 brightness-0 invert">
-                <p class="font-bold text-white mb-4">PTPN IV Regional 5</p>
-                <p class="text-sm leading-relaxed">Berkomitmen menjadi perusahaan agribisnis berkelanjutan terdepan di Indonesia.</p>
-            </div>
-            <div data-aos="fade-up">
-                <h4 class="text-white font-black mb-6 uppercase tracking-widest">Navigasi</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="#home" class="hover:text-white transition">Home</a></li>
-                    <li><a href="#news" class="hover:text-white transition">News</a></li>
-                    <li><a href="#produk" class="hover:text-white transition">Produk</a></li>
-                    <li><a href="#kontak" class="hover:text-white transition">Kontak</a></li>
-                </ul>
-            </div>
-            <div data-aos="fade-left">
-                <h4 class="text-white font-black mb-6 uppercase tracking-widest">Waktu Kerja</h4>
-                <p class="text-sm">Senin - Jumat: 08:00 - 17:00</p>
-                <p class="text-sm mt-2 text-red-500 font-bold uppercase">Sabtu - Minggu: Libur</p>
-            </div>
-        </div>
-        <div class="text-center mt-20 pt-10 border-t border-gray-800 text-xs font-bold uppercase tracking-[0.3em]">
-            © 2026 PT Perkebunan Nusantara IV. All Rights Reserved.
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Init Animation
-        AOS.init({ duration: 1000, once: true });
-
-        // Mobile Menu
-        const btn = document.getElementById('hamburger');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => { menu.classList.toggle('active'); });
-    </script>
-</body>
-</html>
+                <div class="group" data-aos="flip-left" data-aos-delay="400
