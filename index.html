@@ -22,233 +22,191 @@
     <style>
         html { scroll-behavior: smooth; }
         .hero-bg {
-            /* Menggunakan file header.jpg Anda tanpa filter gelap agar terang */
             background-image: url('header.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+        /* Card blur yang tipis agar foto belakang tetap terlihat jelas */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        /* Transisi Dropdown Mobile */
+        #mobile-menu {
+            display: none;
+        }
+        #mobile-menu.active {
+            display: block;
         }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
 
-    <nav class="bg-white/95 backdrop-blur-sm shadow-md sticky top-0 z-50">
+    <nav class="bg-white shadow-sm sticky top-0 z-[100]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-3">
-                    <img src="logo.jpeg" alt="Logo PTPN IV" class="h-14 w-auto object-contain">
+                    <img src="logo.jpeg" alt="Logo PTPN IV" class="h-10 md:h-12 w-auto object-contain">
                     <div class="flex flex-col">
-                        <span class="font-black text-ptpn-green text-xl leading-none">PTPN IV</span>
-                        <span class="text-xs text-gray-500 font-bold uppercase tracking-widest">Regional 5</span>
+                        <span class="font-black text-ptpn-green text-lg leading-none">PTPN IV</span>
+                        <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Regional 5</span>
                     </div>
                 </div>
-                <div class="hidden md:flex space-x-8 items-center">
+
+                <div class="hidden md:flex space-x-6 items-center">
                     <a href="#home" class="text-gray-700 hover:text-ptpn-green font-bold transition">Home</a>
                     <a href="#tentang" class="text-gray-700 hover:text-ptpn-green font-bold transition">Tentang</a>
                     <a href="#galeri" class="text-gray-700 hover:text-ptpn-green font-bold transition">Galeri</a>
                     <a href="#produk" class="text-gray-700 hover:text-ptpn-green font-bold transition">Produk</a>
-                    <a href="#kontak" class="bg-ptpn-green text-white px-6 py-2.5 rounded-full hover:bg-ptpn-dark transition font-bold">Kontak</a>
+                    <a href="#kontak" class="text-gray-700 hover:text-ptpn-green font-bold transition">Kontak</a>
+                    <button class="bg-ptpn-green text-white px-6 py-2 rounded-lg hover:bg-ptpn-dark transition font-bold shadow-md">Login</button>
                 </div>
+
+                <div class="md:hidden flex items-center gap-4">
+                    <button class="bg-ptpn-green text-white px-4 py-1.5 rounded-lg text-sm font-bold">Login</button>
+                    <button id="hamburger" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" class="block px-4 py-3 text-gray-700 font-bold hover:bg-ptpn-light hover:text-ptpn-green rounded-xl">Home</a>
+                <a href="#tentang" class="block px-4 py-3 text-gray-700 font-bold hover:bg-ptpn-light hover:text-ptpn-green rounded-xl">Tentang Kami</a>
+                <a href="#galeri" class="block px-4 py-3 text-gray-700 font-bold hover:bg-ptpn-light hover:text-ptpn-green rounded-xl">Galeri</a>
+                <a href="#produk" class="block px-4 py-3 text-gray-700 font-bold hover:bg-ptpn-light hover:text-ptpn-green rounded-xl">Produk</a>
+                <a href="#kontak" class="block px-4 py-3 text-gray-700 font-bold hover:bg-ptpn-light hover:text-ptpn-green rounded-xl">Kontak</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero-bg h-[85vh] flex items-center justify-center text-center px-4">
-        <div class="bg-white/70 p-10 md:p-16 rounded-[40px] backdrop-blur-md shadow-2xl border border-white/80 max-w-5xl">
-            <h1 class="text-4xl md:text-7xl font-black text-ptpn-dark mb-4 tracking-tighter uppercase leading-tight">
+    <section id="home" class="hero-bg h-[70vh] flex items-center justify-center text-center px-4 relative">
+        <div class="glass-card p-8 md:p-12 rounded-[30px] shadow-lg max-w-4xl border border-white/40">
+            <h1 class="text-3xl md:text-5xl font-black text-ptpn-dark mb-3 tracking-tight uppercase leading-tight">
                 PT Perkebunan Nusantara IV
             </h1>
-            <p class="text-xl md:text-3xl text-ptpn-green font-extrabold italic mb-10 tracking-wide">
+            <p class="text-lg md:text-xl text-ptpn-green font-extrabold italic mb-8 tracking-wide">
                 Tumbuh, Juara, Bangun Negeri
             </p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center">
-                <a href="#produk" class="bg-ptpn-green text-white px-10 py-4 rounded-xl font-black text-lg hover:bg-ptpn-dark transition shadow-lg flex items-center justify-center gap-2">
-                    <i class="fas fa-leaf"></i> Produk Kami
-                </a>
-                <a href="#kontak" class="bg-white text-ptpn-green border-2 border-ptpn-green px-10 py-4 rounded-xl font-black text-lg hover:bg-ptpn-light transition shadow-lg">
-                    Hubungi Kami
-                </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#produk" class="bg-ptpn-green text-white px-8 py-3 rounded-xl font-black text-sm hover:bg-ptpn-dark transition shadow-lg uppercase">Produk Utama</a>
+                <a href="#kontak" class="bg-white/80 text-ptpn-green border-2 border-ptpn-green px-8 py-3 rounded-xl font-black text-sm hover:bg-white transition uppercase">Hubungi Kami</a>
             </div>
         </div>
     </section>
 
-    <section id="tentang" class="py-24 max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-black text-gray-900 uppercase">Tentang Kami</h2>
-            <div class="h-1.5 bg-ptpn-green w-24 mx-auto mt-4 rounded-full"></div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-16 items-center">
+    <section id="tentang" class="py-20 max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1591543620767-582b2e76369e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                      alt="Perkebunan Sawit" 
-                     class="rounded-[30px] shadow-2xl border-4 border-white object-cover h-[500px] w-full z-10 relative">
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-ptpn-green rounded-full -z-0 opacity-20"></div>
+                     class="rounded-[30px] shadow-xl border-4 border-white object-cover h-[350px] w-full">
             </div>
-            
-            <div class="space-y-8">
-                <div>
-                    <h3 class="text-3xl font-black text-ptpn-dark mb-4 border-l-8 border-ptpn-green pl-4">CERITA</h3>
-                    <p class="text-gray-600 leading-relaxed text-xl text-justify font-medium italic">
-                        PT Perkebunan Nusantara III (Persero) atau PTPN III (Persero) merupakan Badan Usaha Milik Negara (BUMN) Holding Perkebunan yang bergerak di bidang pengelolaan, pengolahan, dan pemasaran hasil komoditi perkebunan nasional secara berkelanjutan.
-                    </p>
-                </div>
-                <div class="bg-ptpn-light p-8 rounded-3xl border-l-8 border-ptpn-green shadow-sm">
-                    <h3 class="text-2xl font-black text-ptpn-dark mb-2">VISI</h3>
-                    <p class="text-gray-700 text-lg font-bold">"Menjadi perusahaan agribisnis nasional yang unggul dan berdaya saing kelas dunia serta berkontribusi secara berkesinambungan bagi kemajuan bangsa."</p>
-                </div>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="flex items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                        <i class="fas fa-certificate text-ptpn-green text-3xl"></i>
-                        <span class="font-black text-gray-800">PRODUK BERKUALITAS</span>
-                    </div>
-                    <div class="flex items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                        <i class="fas fa-sync text-ptpn-green text-3xl"></i>
-                        <span class="font-black text-gray-800">OPERATIONAL EXCELLENCE</span>
-                    </div>
+            <div class="space-y-6">
+                <h2 class="text-3xl font-black text-gray-900 border-l-8 border-ptpn-green pl-4">TENTANG KAMI</h2>
+                <p class="text-gray-600 leading-relaxed text-lg font-medium">
+                    PT Perkebunan Nusantara III (Persero) merupakan BUMN Holding Perkebunan yang mengelola komoditi perkebunan nasional secara profesional dan berkelanjutan.
+                </p>
+                <div class="bg-ptpn-light p-6 rounded-2xl border border-green-100">
+                    <p class="text-ptpn-dark font-bold italic text-lg">"Menjadi perusahaan agribisnis unggul dan berdaya saing kelas dunia."</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="galeri" class="py-24 bg-white px-4">
+    <section id="galeri" class="py-20 bg-white px-4">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-4 uppercase">Galeri Operasional</h2>
-            <p class="text-center text-gray-500 font-bold mb-16 italic">Tinjau perkebunan dan fasilitas produksi terbaik kami</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="group relative h-80 rounded-3xl overflow-hidden shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
-                        <span class="text-white font-black text-xl tracking-wide">Palm Plantation</span>
-                    </div>
+            <h2 class="text-3xl font-black text-center mb-12 uppercase tracking-tight">Galeri Operasional</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="h-64 rounded-2xl overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-105 transition duration-500">
                 </div>
-                <div class="group relative h-80 rounded-3xl overflow-hidden shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1621932953986-15fcf084da0f?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
-                        <span class="text-white font-black text-xl tracking-wide">Quality Control</span>
-                    </div>
+                <div class="h-64 rounded-2xl overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1621932953986-15fcf084da0f?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-105 transition duration-500">
                 </div>
-                <div class="group relative h-80 rounded-3xl overflow-hidden shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1501004318641-729e84f206e2?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
-                        <span class="text-white font-black text-xl tracking-wide">Sustainable Farming</span>
-                    </div>
+                <div class="h-64 rounded-2xl overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1501004318641-729e84f206e2?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-105 transition duration-500">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="produk" class="py-24 max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-black text-center mb-4 uppercase text-ptpn-dark">Produk Unggulan</h2>
-        <p class="text-center text-gray-500 font-bold mb-16 italic uppercase tracking-widest">Produk minyak sawit berkualitas tinggi</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-            <div class="bg-white p-8 rounded-[40px] shadow-lg border border-gray-100 hover:shadow-2xl transition group">
-                <div class="h-48 overflow-hidden rounded-3xl mb-6">
-                    <img src="https://images.unsplash.com/photo-1621932953986-15fcf084da0f?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
-                </div>
-                <h4 class="font-black text-2xl text-ptpn-dark mb-3">Kelapa Sawit</h4>
-                <p class="text-gray-500 font-medium">Bahan baku utama minyak makan dan produk oleokimia terbaik.</p>
+    <section id="produk" class="py-20 max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-black text-center mb-12 uppercase text-ptpn-dark">Produk Unggulan</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition">
+                <i class="fas fa-leaf text-ptpn-green text-5xl mb-4"></i>
+                <h4 class="font-black text-xl mb-2">Kelapa Sawit</h4>
+                <p class="text-gray-500 text-sm">CPO dan PKO berkualitas tinggi untuk industri global.</p>
             </div>
-            <div class="bg-white p-8 rounded-[40px] shadow-lg border border-gray-100 hover:shadow-2xl transition group">
-                <div class="h-48 overflow-hidden rounded-3xl mb-6 text-center bg-ptpn-light flex items-center justify-center">
-                    <i class="fas fa-vial text-ptpn-green text-6xl"></i>
-                </div>
-                <h4 class="font-black text-2xl text-ptpn-dark mb-3">Produk Turunan</h4>
-                <p class="text-gray-500 font-medium">CPO dan PKO berkualitas ekspor untuk berbagai kebutuhan industri.</p>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition">
+                <i class="fas fa-flask text-ptpn-green text-5xl mb-4"></i>
+                <h4 class="font-black text-xl mb-2">Inovasi Produk</h4>
+                <p class="text-gray-500 text-sm">Riset berkelanjutan untuk hilirisasi produk perkebunan.</p>
             </div>
-            <div class="bg-white p-8 rounded-[40px] shadow-lg border border-gray-100 hover:shadow-2xl transition group">
-                <div class="h-48 overflow-hidden rounded-3xl mb-6 bg-ptpn-light flex items-center justify-center">
-                    <i class="fas fa-leaf text-ptpn-green text-6xl"></i>
-                </div>
-                <h4 class="font-black text-2xl text-ptpn-dark mb-3">Pupuk Organik</h4>
-                <p class="text-gray-500 font-medium">Memanfaatkan limbah perkebunan untuk pupuk ramah lingkungan.</p>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition">
+                <i class="fas fa-seedling text-ptpn-green text-5xl mb-4"></i>
+                <h4 class="font-black text-xl mb-2">Bibit Unggul</h4>
+                <p class="text-gray-500 text-sm">Penyediaan bibit berkualitas untuk produktivitas maksimal.</p>
             </div>
         </div>
     </section>
 
-    <section id="kontak" class="py-24 bg-white px-4">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
-            <div>
-                <h2 class="text-4xl font-black mb-4 uppercase">Hubungi Kami</h2>
-                <p class="text-xl text-gray-600 mb-10 font-bold italic">Siap melayani pertanyaan dan kerjasama bisnis Anda.</p>
-                <form class="space-y-6">
-                    <input type="text" placeholder="Nama Lengkap" class="w-full p-5 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-ptpn-green outline-none font-bold">
-                    <input type="email" placeholder="Email Kantor" class="w-full p-5 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-ptpn-green outline-none font-bold">
-                    <textarea placeholder="Pesan Anda" class="w-full p-5 bg-gray-50 border-2 border-gray-100 rounded-2xl h-44 focus:border-ptpn-green outline-none font-bold"></textarea>
-                    <button class="bg-ptpn-green text-white w-full py-5 rounded-2xl font-black text-xl hover:bg-ptpn-dark transition shadow-xl uppercase">Kirim Pesan Profesional</button>
+    <section id="kontak" class="py-20 bg-white px-4">
+        <div class="max-w-4xl mx-auto bg-ptpn-dark text-white p-10 rounded-[40px] shadow-2xl">
+            <h2 class="text-3xl font-black mb-8 text-center uppercase tracking-widest border-b border-ptpn-green pb-4">Hubungi Kami</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-map-marker-alt text-2xl text-ptpn-green"></i>
+                        <p class="text-sm font-bold">Jl. Slt. Abdurrahman No.11, Pontianak, Kalbar</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-phone-alt text-2xl text-ptpn-green"></i>
+                        <p class="text-sm font-bold">(0561) 749367</p>
+                    </div>
+                </div>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Nama" class="w-full p-3 bg-white/10 border border-white/20 rounded-xl focus:bg-white/20 outline-none placeholder-white/60">
+                    <textarea placeholder="Pesan" class="w-full p-3 bg-white/10 border border-white/20 rounded-xl focus:bg-white/20 outline-none placeholder-white/60 h-24"></textarea>
+                    <button class="bg-ptpn-green w-full py-3 rounded-xl font-black uppercase hover:bg-ptpn-light hover:text-ptpn-green transition">Kirim</button>
                 </form>
             </div>
-            <div class="bg-ptpn-dark text-white p-12 rounded-[50px] shadow-2xl space-y-10">
-                <h3 class="text-3xl font-black mb-8 border-b-4 border-ptpn-green pb-4">INFORMASI KAMI</h3>
-                <div class="flex items-start gap-6">
-                    <div class="bg-ptpn-green p-4 rounded-2xl"><i class="fas fa-map-marker-alt text-2xl"></i></div>
-                    <div>
-                        <p class="font-black text-xl">Alamat Kantor</p>
-                        <p class="text-green-100 text-lg">Jl. Slt. Abdurrahman No.11, Sungai Bangkong, Pontianak, Kalimantan Barat 78113</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-6">
-                    <div class="bg-ptpn-green p-4 rounded-2xl"><i class="fas fa-phone-alt text-2xl"></i></div>
-                    <div>
-                        <p class="font-black text-xl">Telepon</p>
-                        <p class="text-green-100 text-lg">(0561) 749367</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-6">
-                    <div class="bg-ptpn-green p-4 rounded-2xl"><i class="fas fa-envelope text-2xl"></i></div>
-                    <div>
-                        <p class="font-black text-xl">Email</p>
-                        <p class="text-green-100 text-lg uppercase">ptpnusantara4@ptpn4.co.id</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-20 px-4">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
-            <div>
-                <div class="flex items-center gap-3 mb-6">
-                    <img src="logo.jpeg" alt="Logo" class="h-14 brightness-0 invert">
-                    <span class="text-2xl font-black tracking-tighter">PTPN IV Regional 5</span>
-                </div>
-                <p class="text-gray-400 text-lg leading-relaxed font-medium">Perusahaan perkebunan terpercaya yang mengutamakan kualitas, inovasi, dan kesejahteraan bangsa.</p>
-                <div class="flex gap-6 mt-8">
-                    <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4 text-center">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <img src="logo.jpeg" alt="Logo" class="h-10 brightness-0 invert opacity-60">
+                <span class="text-xl font-black text-white">PTPN IV Regional 5</span>
             </div>
-            <div>
-                <h3 class="text-2xl font-black mb-8 border-l-4 border-ptpn-green pl-4 uppercase">Navigasi</h3>
-                <ul class="space-y-4 font-bold text-lg">
-                    <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-                    <li><a href="#tentang" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
-                    <li><a href="#galeri" class="text-gray-400 hover:text-white transition">Galeri Operasional</a></li>
-                    <li><a href="#produk" class="text-gray-400 hover:text-white transition">Produk Unggulan</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-2xl font-black mb-8 border-l-4 border-ptpn-green pl-4 uppercase">Waktu Operasional</h3>
-                <p class="text-gray-400 text-lg mb-4 font-medium italic">Melayani pada jam kerja profesional:</p>
-                <div class="bg-gray-800 p-6 rounded-3xl">
-                    <div class="flex justify-between border-b border-gray-700 pb-2 mb-2">
-                        <span>Senin - Jumat:</span>
-                        <span class="font-black text-ptpn-green">08:00 - 17:00</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Sabtu - Minggu:</span>
-                        <span class="text-red-400 font-bold uppercase">Libur</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-20 pt-10 border-t border-gray-800 text-gray-500 font-bold tracking-widest uppercase">
-            © 2026 PT PERKEBUNAN NUSANTARA. ALL RIGHTS RESERVED.
+            <p class="text-sm font-bold uppercase tracking-widest mb-4">Tumbuh. Juara. Bangun Negeri.</p>
+            <div class="h-px bg-gray-800 w-full mb-8"></div>
+            <p class="text-[10px]">&copy; 2026 PT PERKEBUNAN NUSANTARA. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('hamburger');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        // Menutup menu saat link diklik
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
